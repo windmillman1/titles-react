@@ -1,4 +1,3 @@
-import React from 'react';
 import ImageGallery from './ImageGallery';
 import styles from './content.module.css';
 
@@ -69,8 +68,13 @@ const renderType = (image) => {
   }
 }
 
+// add className to self
 function Image({ image }) {
-  return <div className={styles.contentContainer}>
+  const fillOnClick = (e) => {
+    e.currentTarget.classList.toggle(styles.fillScreen);
+  };
+
+  return <div className={styles.contentContainer} onClick={fillOnClick}>
     <hr></hr>
     {renderType(image)}
   </div>

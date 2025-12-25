@@ -48,6 +48,18 @@
   margin-bottom: 10px;
 }
 
+.fillScreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  inset: 0;
+  z-index: 1000;
+  width: 100dvw;
+  height: 100dvh;
+  object-fit: contain;
+  object-position: center;
+}
+
 @media (min-width: 768px) {
   .image {
     max-width: 200px;
