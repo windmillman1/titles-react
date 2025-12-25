@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Twinkle+Star&display=swap');
 
 .bodyContainer {
-  position: absolute;
+  height: 100%;
+  position: fixed;
+  overflow: scroll;
   inset: 0;
   font-size: 32px;
   font-family: 'Twinkle Star';
   color: pink;
   background-color: black;
-  margin-left: 15px;
 }
 
 .contentContainer {
@@ -50,14 +51,13 @@
 
 .fillScreen {
   position: fixed;
-  left: 0;
-  top: 0;
   inset: 0;
   z-index: 1000;
   width: 100dvw;
   height: 100dvh;
   object-fit: contain;
   object-position: center;
+  background-color: black;
 }
 
 @media (min-width: 768px) {
