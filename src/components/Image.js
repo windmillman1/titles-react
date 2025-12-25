@@ -3,8 +3,18 @@ import styles from './content.module.css';
 
 const debug = false;
 
+// Fill self on click
 const fillOnClick = (e) => {
   e.currentTarget.classList.toggle(styles.fillScreen);
+};
+
+// Fill child media element on click
+const fillImageOnClick = (e) => {
+  // breaks on iframes at the moment
+  const mediaElement = e.currentTarget.querySelector('img, video');
+  if (mediaElement) {
+    mediaElement.classList.toggle(styles.fillScreen);
+  }
 };
 
 const renderType = (image) => {
@@ -16,28 +26,28 @@ const renderType = (image) => {
   }
 
   if (image.gfyCatUrl) {
-    return <div className={styles.contentContainer} style={{ width: 1200, height: 800, paddingBottom: 100 }}>
+    return <div className={styles.contentContainer} style={{ width: 1200, height: 800, paddingBottom: 100 }} onClick={fillImageOnClick}>
       {debug && <p>Gfycat: {JSON.stringify(image)}</p>}
       <a href={image.postUrl} className={styles.link}>{image.score} | {image.title}</a>
       <p><b>{`r/${image.subreddit}`}</b> {image.author}</p>
-      <iframe src={image.gfyCatUrl} title={image.title} className={styles.responsiveIframe} frameBorder='0' scrolling='no' allowFullScreen onClick={fillOnClick}>
+      <iframe src={image.gfyCatUrl} title={image.title} className={styles.responsiveIframe} frameBorder='0' scrolling='no' allowFullScreen>
       </iframe>
     </div>
   } else if (image.gifEmbedUrl) {
-    return <div className={styles.contentContainer} style={{ width: 1200, height: 800, paddingBottom: 100 }}>
+    return <div className={styles.contentContainer} style={{ width: 1200, height: 800, paddingBottom: 100 }} onClick={fillImageOnClick}>
       {debug && <p>Redgif: {JSON.stringify(image)}</p>}
       <a href={image.postUrl} className={styles.link}>{image.score} | {image.title}</a>
       <p><b>{`r/${image.subreddit}`}</b> {image.author}</p>
-      <iframe src={image.gifEmbedUrl} title={image.title} className={styles.responsiveIframe} frameBorder='0' scrolling='no' allowFullScreen onClick={fillOnClick}>
+      <iframe src={image.gifEmbedUrl} title={image.title} className={styles.responsiveIframe} frameBorder='0' scrolling='no' allowFullScreen>
       </iframe>
     </div>
   } else if (image.gifUrl) {
     let url = image.gifUrl.replace('.gifv', '.mp4');  // gifv is not a real file format, should be mp4
-    return <div className={styles.contentContainer} style={{ paddingBottom: 100 }}>
+    return <div className={styles.contentContainer} style={{ paddingBottom: 100 }} onClick={fillImageOnClick}>
       {debug && <p>Basic or Embedded Gif: {JSON.stringify(image)}</p>}
       <a href={image.postUrl} className={styles.link}>{image.score} | {image.title}</a>
       <p><b>{`r/${image.subreddit}`}</b> {image.author}</p>
-      <video loop autoPlay controls className={styles.responsiveVideo} onClick={fillOnClick}>
+      <video loop autoPlay controls className={styles.responsiveVideo}>
         <source src={url}></source>
       </video>
     </div>
@@ -53,21 +63,22 @@ const renderType = (image) => {
     </div>
   } else if (image.is_gallery) {
     // still uses url (url_overriden_by_destination) but creates iframe instead of img tag
-    return <ImageGallery image={image} onClick={fillOnClick} />
+    return <div className={styles.contentContainer} onClick={fillImageOnClick}>
+      <ImageGallery image={image} /></div>
   } else if (!image.url && image.thumbnail) {
     // Should be an image, but image at url no longer exists. Use thumbnail image instead
-    return <div className={styles.contentContainer}>
+    return <div className={styles.contentContainer} onClick={fillImageOnClick}>
       {debug && <p>Thumbnail Image: {JSON.stringify(image)}</p>}
       <a href={image.postUrl} className={styles.link}>{image.score} | {image.title}</a>
       <p><b>{`r/${image.subreddit}`}</b> {image.author}</p>
-      <img className={`${styles.image} ${styles.responsiveImage}`} src={image.thumbnail} alt={image.title} onClick={fillOnClick}></img>
+      <img className={`${styles.image} ${styles.responsiveImage}`} src={image.thumbnail} alt={image.title}></img>
     </div>
   } else {
-    return <div className={styles.contentContainer}>
+    return <div className={styles.contentContainer} onClick={fillImageOnClick}>
       {debug && <p>Normal Image: {JSON.stringify(image)}</p>}
       <a href={image.postUrl} className={styles.link}>{image.score} | {image.title}</a>
       <p><b>{`r/${image.subreddit}`}</b> {image.author}</p>
-      <img className={`${styles.image} ${styles.responsiveImage}`} src={image.url} alt={image.title} onClick={fillOnClick}></img>
+      <img className={`${styles.image} ${styles.responsiveImage}`} src={image.url} alt={image.title}></img>
     </div>
   }
 }
