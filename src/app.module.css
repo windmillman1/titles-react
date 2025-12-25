@@ -1,0 +1,344 @@
+body {
+  color: #000;
+  background-color: #fff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+.navigation {
+  background-color: #1a1a1a;
+  padding: 1rem 0;
+  border-bottom: 2px solid #333;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navBrand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.navBrand:hover {
+  color: #ccc !important;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navLink {
+  color: black !important;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #fff !important;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1a1a1a;
+  padding: 2rem 0;
+  border-top: 2px solid #333;
+  margin-top: 4rem;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.footerLink {
+  color: black !important;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footerLink:hover {
+  color: #fff !important;
+}
+
+/* Page Container */
+.pageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px;
+}
+
+/* Main Layout */
+.mainLayout {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+}
+
+.home-wikipedia {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #202122;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 2rem;
+}
+
+.wikipedia-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #a2a9b1;
+  padding: 0;
+}
+
+.wikipedia-logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.wikipedia-logo h1 {
+  font-family: "Linux Libertine", "Georgia", "Times", serif;
+  font-size: 40px;
+  font-weight: normal;
+  color: #000;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.wikipedia-subtitle {
+  font-family: "Linux Libertine", "Georgia", "Times", serif;
+  font-size: 16px;
+  color: #54595d;
+  margin: 5px 0 0 0;
+  font-style: italic;
+}
+
+.wikipedia-search {
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  padding: 0 20px;
+}
+
+.wikipedia-search-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.wikipedia-search-input:focus {
+  border-color: #3366cc;
+  box-shadow: inset 0 0 0 1px #3366cc;
+}
+
+.wikipedia-search-button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  background-color: #3366cc;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.wikipedia-search-button:hover {
+  background-color: #2a4a99;
+}
+
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.language-card {
+  background-color: #ffffff;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  padding: 12px;
+  text-decoration: none;
+  color: #202122;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.language-card:hover {
+  background-color: #f8f9fa;
+  border-color: #3366cc;
+  text-decoration: none;
+  color: #202122;
+}
+
+.language-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+  color: #000;
+}
+
+.language-articles {
+  font-size: 12px;
+  color: #54595d;
+  margin: 0;
+}
+
+.wikipedia-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #a2a9b1;
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  color: #54595d;
+  font-size: 12px;
+}
+
+.wikipedia-footer a {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.wikipedia-footer a:hover {
+  text-decoration: underline;
+}
+
+.reddit-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.reddit-section h2 {
+  font-family: "Linux Libertine", "Georgia", "Times", serif;
+  font-size: 24px;
+  color: #000;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.reddit-controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reddit-controls button {
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.reddit-controls button:hover {
+  background-color: #eaecf0;
+}
+
+.reddit-posts {
+  display: grid;
+  gap: 20px;
+}
+
+/* Content container for Reddit posts in Wikipedia style */
+.contentContainer-wikipedia {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+}
+
+.contentContainer-wikipedia hr {
+  border: none;
+  border-top: 1px solid #a2a9b1;
+  margin-bottom: 16px;
+}
+
+.contentContainer-wikipedia a {
+  color: #3366cc;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contentContainer-wikipedia a:hover {
+  text-decoration: underline;
+}
+
+.contentContainer-wikipedia p {
+  color: #202122;
+  margin: 8px 0;
+}
+
+.contentContainer-wikipedia img,
+.contentContainer-wikipedia video,
+.contentContainer-wikipedia iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .wikipedia-logo h1 {
+    font-size: 28px;
+  }
+
+  .wikipedia-subtitle {
+    font-size: 14px;
+  }
+
+  .language-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    padding: 10px;
+  }
+
+  .reddit-controls {
+    justify-content: center;
+  }
+
+  .contentContainer-wikipedia {
+    padding: 12px;
+  }
+}

@@ -1,0 +1,88 @@
+/* Content component CSS module - only class names */
+@import url('https://fonts.googleapis.com/css2?family=Twinkle+Star&display=swap');
+
+.bodyContainer {
+  position: absolute;
+  inset: 0;
+  font-size: 32px;
+  font-family: 'Twinkle Star';
+  color: pink;
+  background-color: black;
+  margin-left: 15px;
+}
+
+.contentContainer {
+  margin-top: 60px;
+}
+
+.link {
+  color: plum;
+}
+
+.image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.imageHover:hover {
+  transform: scale(0.66);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.responsiveImage {
+  display: block;
+  max-width: 390px;
+  margin-bottom: 10px;
+}
+
+.responsiveVideo {
+  display: block;
+  max-width: 1400px;
+  margin-bottom: 10px;
+}
+
+.responsiveIframe {
+  display: block;
+  max-width: 1400px;
+  max-height: 1200px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .image {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 420px) {
+  .responsiveImage {
+    max-width: 390px;
+  }
+
+  .responsiveVideo {
+    max-width: 1400px;
+  }
+
+  .responsiveIframe {
+    max-width: 1400px;
+    max-height: 1200px;
+  }
+}
+
+@media (max-width: 1920px) {
+  .responsiveImage {
+    max-width: 1400px;
+    max-height: 1200px;
+  }
+
+  .responsiveVideo {
+    max-width: 1400px;
+    max-height: 1200px;
+  }
+
+  .responsiveIframe {
+    max-width: 1400px;
+    max-height: 1200px;
+  }
+}
